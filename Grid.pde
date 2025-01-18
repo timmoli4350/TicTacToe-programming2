@@ -1,8 +1,6 @@
 class Grid {         
   //grid class ++++ don't hardcode the x and y placements
-  
-  //constructor?
- 
+
   Grid(int tWidth, int tHeight) {
     gridWidth = tWidth;
     gridHeight = tHeight;
