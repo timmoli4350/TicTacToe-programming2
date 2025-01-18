@@ -6,7 +6,7 @@
 int player1; //number of turns
 int player2;
 
-boolean player1turn = true;
+boolean player1turn = false;
 boolean player2turn = false;
 
   int gridWidth = 3; //these variables can be changed to have 
@@ -18,8 +18,9 @@ PImage pinkBow;
 PImage pinkHeart;
 
 Grid grid; //instantiate the grid 
+Score score;
 
-public void setup() {
+void setup() {
   pinkBow = loadImage("pinkribbon.png");
   pinkHeart = loadImage("pinkcakeheart.png");
   
@@ -28,16 +29,22 @@ public void setup() {
     
   size(1200, 900);
   background(#FADADD);
+  
+  first();
+  
   grid = new Grid(gridWidth, gridHeight);
   grid.gridSetup(gridWidth, gridHeight);
   grid.uiSetup();
+  
+  score = new Score();
+  score.scoreReset();
 }
 
-public void draw() {
+void draw() {
 
 }
 
-void mousePressed() {
+public void mousePressed() {
     
     if (mouseX < gridWidthPoints && mouseY < gridHeightPoints) {
       
@@ -57,3 +64,19 @@ void mousePressed() {
     }
   
   }
+  
+public void first() {
+  if (Math.random() > 0.5) {
+    player1turn = true;
+  } else {
+    player2turn = true;
+  }
+}
+    
+  
+  
+  
+  //start: randomly generate a number that decides 0-1 who starts first
+  // check if the thing is open (0), if it is, add a 1 or a 5, 
+  //runthrough, check if its = 3 or =15
+  //if 9 turns, or 9 mousepresses pass, then we tie. 
