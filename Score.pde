@@ -1,25 +1,28 @@
-// scoring class, array
-/*
 class Score {
+// scoring class, array
 
   int [][] score = new int[3][3];
   
   public void scoreReset(){
-    for (int i = 0; i < score.length; i++) {
-      score[i] = 0;
-    
+    for (int row = 0; row < 3; row++) {
+      for (int col = 0; col < 3; col++) {
+        score[row][col] = 0;
+    }
+   }
   }
   
   
-  public void getRow() {
+  public void checkRow(int row, int col) {
+    //a
   }
   
-  public void getCol() {
+  public void checkCol(int row, int col) {
+    //a
   }
-  
-  
 }
-  */
+  
+
+
 
 
 
