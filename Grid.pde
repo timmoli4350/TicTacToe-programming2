@@ -1,5 +1,4 @@
 class Grid {         
-  //grid class ++++ don't hardcode the x and y placements
 
   Grid(int tWidth, int tHeight) {
     gridWidth = tWidth;
@@ -25,8 +24,13 @@ class Grid {
   
   public void uiSetup(){
     stroke(#FFFFFF);
+    fill(#FFFFFF);
     strokeWeight(10);
     rect(950, 550, 200, 100);
+    fill(#FF93B3);
+    textSize(50);
+    textFont(textFont);
+    text("start", 1000, 615);
   }
   
 
