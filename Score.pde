@@ -13,8 +13,10 @@ class Score {
         score[row][col] = 0;
     }
    }
+     player1moves = 0;
+     player2moves = 0;
   }
-  
+    
   public void playGame() {
     checkRow();
     checkCol();
@@ -42,10 +44,7 @@ class Score {
          println("player 2 turn");
          
          score[row][col] = 1;
-         
-         if (score[1][1] == 1) { //testcase
-           playAgain();
-         }
+
       }
       
       else if (player2turn) {
@@ -67,9 +66,20 @@ class Score {
     
     //rows
     for (int row = 0; row < score.length; row++) {
+      total = 0;
       for (int col = 0; col < score[0].length; col++) {
+        total += score[row][col];
+        isWinner();
         
-        
+      }
+    }
+      
+     //columns
+     for (int col = 0; col < score[0].length; col++) {
+      total = 0;
+      for (int row = 0; row < score.length; row++) {
+        total += score[row][col];
+        isWinner();
         
       }
     }
@@ -84,23 +94,30 @@ class Score {
     if (total == 12) {
       player2Wins();
     }
+    
+    
   }
   
   
   public void player1Wins() {
     println("player 1 (bows) wins!");
+    image(p1win, 200, 200);
+    player1totalWon++;
     playAgain();
     
   }
   
   public void player2Wins() {
     println("player 2 (hearts) wins!");
+    image(p2win, 200, 200);
+    player2totalWon++;
     playAgain();
     
   }
   
   public void tieGame() {
     println("tie game!");
+    image(tieGame, 200, 200);
     playAgain();
   }
   
@@ -108,6 +125,7 @@ class Score {
     println("hit start to play again!");
     scoreReset();
     grid.uiSetup();
+    
     gameCurrently = false;
   }
   
