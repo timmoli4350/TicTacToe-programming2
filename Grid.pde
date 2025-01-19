@@ -31,6 +31,25 @@ class Grid {
     textSize(50);
     textFont(textFont);
     text("start", 1000, 615);
+    
+    fill(#FADADD);
+    stroke(#FADADD);
+    rect(950, 100, 200, 400);
+    
+    fill(#FFFFFF);
+    textSize(30);
+    text("Player 1 (bows)", 950, 100);
+    text("Games won:", 960, 130);
+    textSize(40);
+    text(player1totalWon, 1020, 175);
+    
+    fill(#FFFFFF);
+    textSize(30);
+    text("Player 2 (hearts)", 950, 300);
+    text("Games won:", 960, 330);
+    textSize(40);
+    text(player2totalWon, 1020, 375);
+    
   }
   
 
