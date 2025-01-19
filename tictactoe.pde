@@ -6,6 +6,8 @@
 int player1moves = 0; //number of turns
 int player2moves = 0;
 
+int player1totalWon = 0;
+int player2totalWon = 0;
 
 boolean player1turn = false;
 boolean player2turn = false;
@@ -19,6 +21,9 @@ boolean gameCurrently = false;
 
 PImage pinkBow;
 PImage pinkHeart;
+PImage p1win;
+PImage p2win;
+PImage tieGame;
 PFont textFont;
 
 
@@ -28,6 +33,10 @@ Score score;
 void setup() {
   pinkBow = loadImage("pinkribbon.png");
   pinkHeart = loadImage("pinkcakeheart.png");
+  p1win = loadImage("p1win.png");
+  p2win = loadImage("p2win.png");
+  tieGame = loadImage("tiegame.png");
+  
   textFont = createFont("Perpetua", 60);
   //textFont = createFont("Courier", 60);
   
@@ -52,12 +61,11 @@ void draw() {
 }
 
 public void mousePressed() {
-  
     if (mouseX > 950 && mouseX < 1150 && mouseY > 550 && mouseY < 650) { //within the confines of the start button
       println("start game");
-   
       setup();
       fill(#FF93B3);
+      stroke(#FFFFFF);
       rect(950, 550, 200, 100);
     
       gameCurrently = true;
