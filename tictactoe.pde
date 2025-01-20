@@ -67,6 +67,11 @@ public void mousePressed() {
       fill(#FF93B3);
       stroke(#FFFFFF);
       rect(950, 550, 200, 100);
+      if (player1turn) {
+        text("Player 1 (bows)", 960, 780);
+      } else if (player2turn) {
+        text("Player 2 (hearts)", 960, 780);
+      }
     
       gameCurrently = true;
     }
