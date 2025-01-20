@@ -35,6 +35,7 @@ class Grid {
     fill(#FADADD);
     stroke(#FADADD);
     rect(950, 100, 200, 400);
+    rect(950, 700, 200, 200);
     
     fill(#FFFFFF);
     textSize(30);
@@ -50,7 +51,12 @@ class Grid {
     textSize(40);
     text(player2totalWon, 1020, 375);
     
+    fill(#FFFFFF);
+    textSize(30);
+    text("Starting Player:", 950, 750);
+
   }
   
 
 }
+
