@@ -60,10 +60,6 @@ class Score {
   }
   
   public void checkAll() { //loops through all parts then calls isWinner to add
-    if (player1moves + player2moves == 9) {
-      tieGame();
-    }
-    
     //rows
     for (int row = 0; row < score.length; row++) {
       total = 0;
@@ -82,6 +78,25 @@ class Score {
         isWinner();
         
       }
+    }
+    
+    //diagonal: RIGHT TO LEFT
+    total = 0;
+    for (int row = 0; row < score.length; row++) {
+      col = (score.length - 1) - row;
+      total += score[row][col];
+    }
+    isWinner();
+    
+    //diagonal: LEFT TO RIGHT
+    total = 0;
+    for (int row = 0; row < score.length; row++) {
+      total += score[row][row];
+    }
+    isWinner();
+    
+    if (player1moves + player2moves == 9) {
+      tieGame();
     }
   }
   
@@ -123,6 +138,9 @@ class Score {
   
   public void playAgain() {
     println("hit start to play again!");
+    fill(#FADADD);
+    stroke(#FADADD);
+    rect(950, 700, 200, 200);
     scoreReset();
     grid.uiSetup();
     
