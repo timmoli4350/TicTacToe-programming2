@@ -1,9 +1,9 @@
 Tic-Tac-Toe Game (pink theme) for Programming II - the Peddie School
 Janurary 2025
 
-Current Status: Works for clicking and placing (manual scoring), game restarts. 
+Current Status: Completely works!
 
-Last Update: Game restart, resets, method organization
+Last Update: Game restart, resets, method organization, Automatic score calculation w/array
 
-Next Status: Automatic score calculation w/array
+Next Update: ?
 
